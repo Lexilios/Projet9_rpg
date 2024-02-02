@@ -1,23 +1,26 @@
-﻿public class human
+﻿public class Person
 {
-    public int attack;
-    public int PM;
-    public int PV;
     public string name;
+    public int attack;
+    public int health;
 
-    public human(string _name, int _attacks, int _health, int _mana)
+    public Person(string _name, int _attack, int _health)
     {
         name = _name;
-        attack = _attacks;
-        PV = _health;
-        PM = _mana;
+        attack = _attack;
+        health = _health;
     }
 
-    public void Printstats()
+    public void PrintStats()
     {
-        Console.WriteLine("{0} stats : ", name);
-        Console.WriteLine("{0} attack : ", attack);
-        Console.WriteLine("{0} mana : ", PM);
+        Console.WriteLine("{0} stats:", name);
+        Console.WriteLine("");
+        Console.WriteLine("Attack value is: {0}", attack);
+        Console.WriteLine("Health value is: {0}", health);
     }
 
+    public void NormAttack(Person target)
+    {
+        target.health -= attack;
+    }
 }

@@ -1,24 +1,33 @@
-public class hero : human
+public class Hero : Person
 {
-    public int PVlvl = 0, MaxPV = 10;
-    public hero(string _name, int _attacks, int _health, int _mana) 
-        : base(_name, _attacks, _health, _mana)
+    public int healLvl = 7, maxHealth = 15;
+
+    public Hero(string _name, int _attack, int _health, int _mana)
+        : base(_name, _attack, _health, _mana)
     {
     }
-    public void levelUp()
+
+    public void LevelUp()
     {
-        Console.WriteLine("GG! You leveled Up.");
-        Console.WriteLine("Attack + 3");
-        Console.WriteLine("PV + 5");
-        Console.WriteLine("Heal + 5");
-        Console.WriteLine("Mana + 10");
+        Console.WriteLine("You leveled up !");
+        Console.WriteLine("Attack +3");
+        Console.WriteLine("Max health +10");
+        Console.WriteLine("Heal +5");
         Console.ReadLine();
         Console.Clear();
 
         attack += 3;
-        MaxPV = 5;
-        PM += 10;
-        PV = MaxPV;
-        PVlvl += 5;
+        maxHealth += 10;
+        health = maxHealth;
+        healLvl += 5;
+    }
+
+}
+
+public class Fire : Hero
+{
+    public Fire(string _name, int _attack, int _health, int _mana)
+        : base(_name, _attack, _health, _mana)
+    {
     }
 }
