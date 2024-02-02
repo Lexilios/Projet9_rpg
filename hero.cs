@@ -2,8 +2,8 @@ public class Hero : Person
 {
     public int healLvl = 7, maxHealth = 15;
 
-    public Hero(string _name, int _attack, int _health, int _mana)
-        : base(_name, _attack, _health, _mana)
+    public Hero(string _name, int _attack, int _health)
+        : base(_name, _attack, _health)
     {
     }
 
@@ -24,10 +24,33 @@ public class Hero : Person
 
 }
 
-public class Fire : Hero
+public class FireHero : Hero
 {
-    public Fire(string _name, int _attack, int _health, int _mana)
-        : base(_name, _attack, _health, _mana)
+    public int mana;
+    public FireHero(string _name, int _attack, int _health, int _mana)
+        : base(_name, _attack, _health)
     {
+        mana = _mana;
     }
 }
+
+public class WaterHero : Hero
+{
+    public int mana;
+    public WaterHero(string _name, int _attack, int _health, int _mana)
+        : base(_name, _attack, _health)
+    {
+        mana = _mana;
+    }
+}
+
+public class EarthHero : Hero
+{
+    public int mana;
+    public EarthHero(string _name, int _attack, int _health, int _mana)
+        : base(_name, _attack, _health)
+    {
+        mana = _mana;
+    }
+}
+

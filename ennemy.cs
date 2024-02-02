@@ -57,12 +57,7 @@ public class EarthEnemy : Enemy
 }
 
 
-
-
-
-
-
-public class Bandit : Enemy
+public class Bandit : NonElement
 {
     public Bandit(string _name, int _attack, int _health)
         : base(_name, _attack, _health)
@@ -95,6 +90,7 @@ public class Bandit : Enemy
     }
 }
 
+/*
 public class Golem : Enemy
 {
     public Golem(string _name, int _attack, int _health)
@@ -182,3 +178,4 @@ public class Dragon : Enemy
     }
 
 }
+*/
