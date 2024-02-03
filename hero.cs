@@ -23,16 +23,38 @@ public class Hero : Person
     }
 
 }
+// *** A voir avec le prof -> systeme element centralisé ***
+
+// But : Enum dans class hero et enemy et enlever les autres classes elements
+public enum ElementEnum
+{
+    Fire, 
+    Water, 
+    Earth,
+    NonElement
+}
 
 public class FireHero : Hero
 {
     public int mana;
-    public FireHero(string _name, int _attack, int _health, int _mana)
+    private ElementEnum element;
+    public FireHero(string _name, int _attack, int _health, int _mana, ElementEnum _element = ElementEnum.Fire)
         : base(_name, _attack, _health)
     {
         mana = _mana;
+        element = _element;
+    }
+
+    public void ElementalAttack(ElementEnum elem)
+    {
+
+    }
+    public void Attacck()
+    {
+        ElementalAttack(element);
     }
 }
+// part a voir
 
 public class WaterHero : Hero
 {

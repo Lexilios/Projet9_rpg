@@ -2,7 +2,7 @@ class program
 {
     static void Main(string[] args)
     {
-        FireHero LionHeart = new FireHero("LionHeart", 5, 15, 20);
+        FireHero LionHeart = new FireHero("LionHeart", 5, 15, 20, ElementEnum.Fire);
         WaterHero Lancelot = new WaterHero("Lancelot", 6, 10, 20);
         EarthHero Alexender = new EarthHero("Alexender", 3, 20, 20);
 
