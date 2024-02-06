@@ -1,4 +1,5 @@
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 public class Enemy : Person
 {
@@ -22,45 +23,29 @@ public class Enemy : Person
 
 public class NonElement : Enemy
 {
-    public NonElement (string _name, int _attack, int _health)
+    private ElementEnum element;
+
+    public NonElement (string _name, int _attack, int _health, ElementEnum _element)
         :base (_name, _attack, _health) 
     {
-        
+        element = _element;
     } 
 }
 
-public class FireEnemy : Enemy
+public class ElementEnemy : Enemy
 {
-    public FireEnemy(string _name, int _attack, int _health)
+    private ElementEnum element;
+
+    public ElementEnemy(string _name, int _attack, int _health, ElementEnum _element)
         : base(_name, _attack, _health)
     {
-
+        element = _element;
     }
-}
-
-public class WaterEnemy : Enemy
-{
-    public WaterEnemy(string _name, int _attack, int _health)
-        : base(_name, _attack, _health)
-    {
-
-    }
-}
-
-public class EarthEnemy : Enemy
-{
-    public EarthEnemy(string _name, int _attack, int _health)
-        : base(_name, _attack, _health)
-    {
-
-    }
-}
-
-
+   
 public class Bandit : NonElement
 {
-    public Bandit(string _name, int _attack, int _health)
-        : base(_name, _attack, _health)
+    public Bandit(string _name, int _attack, int _health, ElementEnum _element)
+        : base(_name, _attack, _health, _element)
     {
         numOfAttack = 2;
     }
@@ -90,49 +75,87 @@ public class Bandit : NonElement
     }
 }
 
-/*
-public class Golem : Enemy
+
+public class Golem : ElementEnemy
 {
-    public Golem(string _name, int _attack, int _health)
-        : base(_name, _attack, _health)
+    public Golem(string _name, int _attack, int _health, ElementEnum _element)
+        : base(_name, _attack, _health, _element)
     {
         numOfAttack = 3;
     }
-    public void Slash (Hero target)
-    {
-        target.health -= attack + 4;
-    }
-
-    public void ShieldBash(Hero target)
-    {
-        target.health -= attack + 2;
-    }
-
-    public void KnightTurn (int choice, Hero target)
-    {
-        if (choice == 1)
+        public void Roll (Hero target)
         {
+            target.health -= attack * 2;
 
         }
-    }
+        public void RockThrow (Hero target)
+        {
+            target.health -= attack + 2;
+        }
+        public void GolemTurn(int choice, Hero target)
+        {
+            if (choice == 1)
+            {
+                NormAttack(target);
+                Console.WriteLine("Golem charged at you!");
+            }
 
+            if (choice == 2)
+            {
+                Roll(target);
+                Console.WriteLine("Golem rolled over you!");
+            }
+
+            if (choice == 3)
+            {
+                RockThrow(target);
+                Console.WriteLine("Golem threw a rock at you");
+            }
+
+            Console.ReadLine();
+            Console.Clear();
+        }
+        public void ElementalAttack()
+        {
+            // Logique de l'attaque élémentaire en fonction de 'element'
+            // Vous pouvez implémenter cela selon les spécificités de chaque élément
+            switch (element)
+            {
+                case ElementEnum.Fire:
+
+                    break;
+                case ElementEnum.Water:
+
+                    break;
+                case ElementEnum.Earth:
+
+                    break;
+                case ElementEnum.NonElement:
+                    break;
+
+                default:
+
+                    break;
+            }
+        }
+    }
 }
 
 
 
-public class Dragon : Enemy
+public class Dragon : ElementEnemy
 {
     public int armor;
 
-    public Dragon(string _name, int _attack, int _health, int _armor)
-        : base(_name, _attack, _health)
+    public Dragon(string _name, int _attack, int _health, int _armor, ElementEnum _element)
+        : base(_name, _attack, _health, _element)
     {
         numOfAttack = 4;
         armor = _armor;
     }
 
 
-    public void FireBreath(Hero target)
+    public void Breath(Hero target)
     {
         target.health -= attack * 2;
     }
@@ -157,8 +180,8 @@ public class Dragon : Enemy
 
         if (choice == 2)
         {
-            FireBreath(target);
-            Console.WriteLine("Dragon used flamethrower on you!");
+            Breath(target);
+            Console.WriteLine("Dragon used his element on you!");
         }
 
         if (choice == 3)
@@ -176,6 +199,28 @@ public class Dragon : Enemy
         Console.ReadLine();
         Console.Clear();
     }
+    public void ElementalAttack()
+    {
+        // Logique de l'attaque élémentaire en fonction de 'element'
+        // Vous pouvez implémenter cela selon les spécificités de chaque élément
+        switch (element)
+        {
+            case ElementEnum.Fire:
 
+                break;
+            case ElementEnum.Water:
+
+                break;
+            case ElementEnum.Earth:
+
+                break;
+            case ElementEnum.NonElement:
+                break;
+
+            default:
+
+                break;
+        }
+    }
 }
-*/
+

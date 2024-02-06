@@ -9,6 +9,7 @@
         name = _name;
         attack = _attack;
         health = _health;
+        
     }
 
     public void PrintStats()
@@ -23,4 +24,11 @@
     {
         target.health -= attack;
     }
+}
+public enum ElementEnum
+{
+    Fire,
+    Water,
+    Earth,
+    NonElement
 }

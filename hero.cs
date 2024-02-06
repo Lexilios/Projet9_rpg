@@ -5,6 +5,7 @@ public class Hero : Person
     public Hero(string _name, int _attack, int _health)
         : base(_name, _attack, _health)
     {
+
     }
 
     public void LevelUp()
@@ -23,56 +24,42 @@ public class Hero : Person
     }
 
 }
-// *** A voir avec le prof -> systeme element centralisé ***
-
-// But : Enum dans class hero et enemy et enlever les autres classes elements
-public enum ElementEnum
-{
-    Fire, 
-    Water, 
-    Earth,
-    NonElement
-}
-
-public class FireHero : Hero
+public class ElementHero : Hero
 {
     public int mana;
     private ElementEnum element;
-    public FireHero(string _name, int _attack, int _health, int _mana, ElementEnum _element = ElementEnum.Fire)
+
+    public ElementHero(string _name, int _attack, int _health, int _mana, ElementEnum _element)
         : base(_name, _attack, _health)
     {
         mana = _mana;
         element = _element;
     }
 
-    public void ElementalAttack(ElementEnum elem)
+    public void ElementalAttack()
     {
+        // Logique de l'attaque élémentaire en fonction de 'element'
+        // Vous pouvez implémenter cela selon les spécificités de chaque élément
+        switch (element)
+        {
+            case ElementEnum.Fire:
+                
+                break;
+            case ElementEnum.Water:
+                
+                break;
+            case ElementEnum.Earth:
+               
+                break;
+            case ElementEnum.NonElement: 
+                break;
 
+            default:
+                
+                break;
+        }
     }
-    public void Attacck()
-    {
-        ElementalAttack(element);
-    }
-}
-// part a voir
 
-public class WaterHero : Hero
-{
-    public int mana;
-    public WaterHero(string _name, int _attack, int _health, int _mana)
-        : base(_name, _attack, _health)
-    {
-        mana = _mana;
-    }
-}
-
-public class EarthHero : Hero
-{
-    public int mana;
-    public EarthHero(string _name, int _attack, int _health, int _mana)
-        : base(_name, _attack, _health)
-    {
-        mana = _mana;
-    }
+    // ajouter d'autres fonctionnalités spécifiques aux héros élémentaires la
 }
 
