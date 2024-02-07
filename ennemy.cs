@@ -23,18 +23,51 @@ public class Enemy : Person
 
 public class NonElement : Enemy
 {
-    private ElementEnum element;
+    protected ElementEnum element;
 
     public NonElement (string _name, int _attack, int _health, ElementEnum _element)
         :base (_name, _attack, _health) 
     {
         element = _element;
-    } 
+    }
+
+    public class Bandit : NonElement
+    {
+        public Bandit(string _name, int _attack, int _health, ElementEnum _element)
+            : base(_name, _attack, _health, _element)
+        {
+            numOfAttack = 2;
+        }
+        public void Stab(Hero target)
+        {
+            target.health -= attack + 2;
+        }
+
+        public void BanditTurn(int choice, Hero target)
+        {
+            if (choice == 1)
+            {
+                NormAttack(target);
+                Console.WriteLine("Bandit stole from you!");
+
+            }
+
+            if (choice == 2)
+            {
+                Stab(target);
+                Console.WriteLine("Bandit stabed you!");
+
+            }
+
+            Console.ReadLine();
+            Console.Clear();
+        }
+    }
 }
 
 public class ElementEnemy : Enemy
 {
-    private ElementEnum element;
+    protected ElementEnum element;
 
     public ElementEnemy(string _name, int _attack, int _health, ElementEnum _element)
         : base(_name, _attack, _health)
@@ -42,38 +75,6 @@ public class ElementEnemy : Enemy
         element = _element;
     }
    
-public class Bandit : NonElement
-{
-    public Bandit(string _name, int _attack, int _health, ElementEnum _element)
-        : base(_name, _attack, _health, _element)
-    {
-        numOfAttack = 2;
-    }
-    public void Stab(Hero target)
-    {
-        target.health -= attack + 2;
-    }
-
-    public void BanditTurn(int choice, Hero target)
-    {
-        if (choice == 1)
-        {
-            NormAttack(target);
-            Console.WriteLine("Bandit whacked you!");
-
-        }
-
-        if (choice == 2)
-        {
-            Stab(target);
-            Console.WriteLine("Bandit stabed you!");
-
-        }
-
-        Console.ReadLine();
-        Console.Clear();
-    }
-}
 
 
 public class Golem : ElementEnemy
@@ -117,8 +118,6 @@ public class Golem : ElementEnemy
         }
         public void ElementalAttack()
         {
-            // Logique de l'attaque élémentaire en fonction de 'element'
-            // Vous pouvez implémenter cela selon les spécificités de chaque élément
             switch (element)
             {
                 case ElementEnum.Fire:
@@ -201,8 +200,6 @@ public class Dragon : ElementEnemy
     }
     public void ElementalAttack()
     {
-        // Logique de l'attaque élémentaire en fonction de 'element'
-        // Vous pouvez implémenter cela selon les spécificités de chaque élément
         switch (element)
         {
             case ElementEnum.Fire:
@@ -223,4 +220,3 @@ public class Dragon : ElementEnemy
         }
     }
 }
-
