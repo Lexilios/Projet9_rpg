@@ -1,18 +1,23 @@
-class program
+/*class program
 {
     static void Main(string[] args)
     {
-        FireHero LionHeart = new FireHero("LionHeart", 5, 15, 20, ElementEnum.Fire);
-        WaterHero Lancelot = new WaterHero("Lancelot", 6, 10, 20);
-        EarthHero Alexender = new EarthHero("Alexender", 3, 20, 20);
+        ElementHero LionHeart = new ElementHero("LionHeart", 5, 15, 20, ElementEnum.Fire);
+        ElementHero Lancelot = new ElementHero("Lancelot", 6, 10, 20, ElementEnum.Water);
+        ElementHero Alexender = new ElementHero("Alexender", 3, 20, 20, ElementEnum.Earth);
 
-        Bandit Keith = new Bandit("Keith", 2, 8);
-        Bandit Ben = new Bandit("Bandit Ben", 2, 8);
+        Bandit Keith = new Bandit("Bandit Keith", 2, 8, ElementEnum.NonElement);
+        Bandit Ben = new Bandit("Bandit Ben", 2, 8, ElementEnum.NonElement);
 
-        FireEnemy FireGolem = new FireEnemy("Fire Golem", 3, 12);
+        Golem FireGolem = new Golem("Fire Golem", 3, 12, ElementEnum.Fire);
+        Golem WaterGolem = new Golem("Water Golem", 3, 12, ElementEnum.Water);
+        Golem EarthGolem = new Golem("Earth Golem", 3, 12, ElementEnum.Earth);
 
 
-        FireEnemy FireDragon = new FireEnemy("Fire Dragon", 5, 20);
+        Dragon FireDragon = new Dragon("Fire Dragon", 5, 20,10, ElementEnum.Fire);
+        Dragon WaterDragon = new Dragon("Water Dragon", 5, 20,10, ElementEnum.Water);
+        Dragon EarthDragon = new Dragon("Earth Dragon", 5, 20,10, ElementEnum.Earth);
     }
 
 }
+*/
