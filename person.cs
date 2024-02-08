@@ -1,4 +1,4 @@
-﻿/*public class Person
+﻿public class Person
 {
     public string name;
     public int attack;
@@ -31,4 +31,4 @@ public enum ElementEnum
     Water,
     Earth,
     NonElement
-}*/
+}

@@ -1,7 +1,13 @@
-/*class program
+using System;
+
+class Program
 {
     static void Main(string[] args)
     {
+
+        Map firstmap = new Map();
+        firstmap.map();
+
         ElementHero LionHeart = new ElementHero("LionHeart", 5, 15, 20, ElementEnum.Fire);
         ElementHero Lancelot = new ElementHero("Lancelot", 6, 10, 20, ElementEnum.Water);
         ElementHero Alexender = new ElementHero("Alexender", 3, 20, 20, ElementEnum.Earth);
@@ -20,4 +26,3 @@
     }
 
 }
-*/

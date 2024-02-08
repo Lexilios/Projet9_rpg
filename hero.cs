@@ -1,4 +1,4 @@
-/*public class Hero : Person
+public class Hero : Person
 {
     public int healLvl = 7, maxHealth = 15;
 
@@ -163,4 +163,3 @@ public class ElementHero : Hero
 
     // ajouter d'autres fonctionnalités spécifiques aux héros élémentaires la
 }
-*/

@@ -1,4 +1,4 @@
-/*class Battle
+class Battle
 {
     public static void IsHeroDead(Hero hero)
     {
@@ -50,4 +50,3 @@
         }
     }
 }
-*/
