@@ -9,7 +9,7 @@
         {
             {'▓', '▓', '▓', '▓', '▓', '▓', '▓', '▓', '▓', '░', '░', '▓', '▓', '▓', '▓', '▓', '▓', '▓', '▓', '▓'},
             {'▓', '║', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▓'},
-            {'▓', '║', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', 'O', '▒', '▒', '▒', '▒', '▒', '▒', '▓'},
+            {'▓', '║', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', 'M', '▒', '▒', '▒', '▒', '▒', '▒', '▓'},
             {'▓', '║', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '▒', '░', '░', '░', '░', '▒', '▒', '▓'},
             {'▓', '║', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '░', '░', '░', '░', '░', '░', '▒', '▓'},
             {'▓', '║', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '░', '░', '░', '░', '░', '░', '▒', '▓'},
@@ -21,7 +21,7 @@
             {'▓', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▓'},
             {'▓', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '¤', '█', '█', '║', '█', '█', '▒', '▓'},
             {'▓', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '▒', '▒', '█', ' ', '║', ' ', '█', '¤', '▓'},
-            {'▓', '▒', '▒', '▒', '▒', '▒', '▒', 'O', '▒', '░', '░', '▒', '▒', '█', ' ', 'O', ' ', '█', '▒', '▓'},
+            {'▓', '▒', '▒', '▒', '▒', '▒', '▒', 'M', '▒', '░', '░', '▒', '▒', '█', ' ', 'M', ' ', '█', '▒', '▓'},
             {'▓', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '▒', '░', '░', '¤', '▒', '█', ' ', ' ', ' ', '█', '▒', '▓'},
             {'▓', '¤', '¤', '¤', '¤', '¤', '¤', '¤', '¤', '░', '░', '▒', '▒', '█', '█', '█', '█', '█', '▒', '▓'},
             {'▓', '¤', '¤', '¤', '¤', '¤', '¤', '¤', '¤', '░', '░', '▒', '▒', '▒', '¤', '▒', '▒', '▒', '¤', '▓'},
@@ -130,7 +130,7 @@
             switch (keyInfo.Key)
             {
                 case ConsoleKey.Z:
-                    if ((posY > 1 && (carte[posY - 1, posX] == '║' || carte[posY - 1, posX] == '▒' || carte[posY - 1, posX] == '╬')) || (posY > 0 && carte[posY - 1, posX] == '═') || (posY > 0 && carte[posY - 1, posX] == '▒' || (posY > 0 && carte[posY - 1, posX] == 'O')))
+                    if ((posY > 1 && (carte[posY - 1, posX] == '║' || carte[posY - 1, posX] == '▒' || carte[posY - 1, posX] == '╬')) || (posY > 0 && carte[posY - 1, posX] == '═') || (posY > 0 && carte[posY - 1, posX] == '▒' || (posY > 0 && carte[posY - 1, posX] == 'M')))
                     {
                         carte[posY, posX] = caractereOrigine; // Rétablit le caractère d'origine
                         posY--;
@@ -139,14 +139,14 @@
 
                     break;
                 case ConsoleKey.S:
-                    if (posY < carte.GetLength(0) - 2 && (carte[posY + 1, posX] == '║' || carte[posY + 1, posX] == '▒' || carte[posY + 1, posX] == '╚' || carte[posY + 1, posX] == '═' || carte[posY + 1, posX] == '╬' || (posY > 0 && carte[posY + 1, posX] == 'O')))
+                    if (posY < carte.GetLength(0) - 2 && (carte[posY + 1, posX] == '║' || carte[posY + 1, posX] == '▒' || carte[posY + 1, posX] == '╚' || carte[posY + 1, posX] == '═' || carte[posY + 1, posX] == '╬' || (posY > 0 && carte[posY + 1, posX] == 'M')))
                     {
                         carte[posY, posX] = caractereOrigine; // Rétablit le caractère d'origine
                         posY++;
                     }
                     break;
                 case ConsoleKey.Q:
-                    if (posX > 1 && ((carte[posY, posX - 1] == '═' || carte[posY, posX - 1] == '▒' || carte[posY, posX - 1] == '╬' || carte[posY, posX - 1] == '║' || (posY > 0 && carte[posY - 1, posX - 1] == '║' && carte[posY, posX - 1] == '▒' || (posY > 0 && carte[posY, posX - 1] == 'O')))))
+                    if (posX > 1 && ((carte[posY, posX - 1] == '═' || carte[posY, posX - 1] == '▒' || carte[posY, posX - 1] == '╬' || carte[posY, posX - 1] == '║' || (posY > 0 && carte[posY - 1, posX - 1] == '║' && carte[posY, posX - 1] == '▒' || (posY > 0 && carte[posY, posX - 1] == 'M')))))
                     {
                         carte[posY, posX] = caractereOrigine; // Rétablit le caractère d'origine
                         posX--;
@@ -154,7 +154,7 @@
                     break;
 
                 case ConsoleKey.D:
-                    if (posX < carte.GetLength(1) - 2 && ((carte[posY, posX + 1] == '═' || carte[posY, posX + 1] == '▒' || carte[posY, posX + 1] == '╬' || carte[posY, posX + 1] == '║' || (posY > 0 && carte[posY - 1, posX + 1] == '║' && carte[posY, posX + 1] == '▒' || (posY > 0 && carte[posY, posX + 1] == 'O')))))
+                    if (posX < carte.GetLength(1) - 2 && ((carte[posY, posX + 1] == '═' || carte[posY, posX + 1] == '▒' || carte[posY, posX + 1] == '╬' || carte[posY, posX + 1] == '║' || (posY > 0 && carte[posY - 1, posX + 1] == '║' && carte[posY, posX + 1] == '▒' || (posY > 0 && carte[posY, posX + 1] == 'M')))))
                     {
                         carte[posY, posX] = caractereOrigine; // Rétablit le caractère d'origine
                         posX++;
