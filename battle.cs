@@ -19,9 +19,10 @@ class Battle
         person2.PrintStats();
         Console.WriteLine();
     }
-    public static void Duel(Enemy enemy, Hero hero)
+
+    public static void Duel(Enemy enemy, Hero hero, Map firstmap)
     {
-        while (enemy.health > 0 && hero.health > 0) 
+        while (enemy.health > 0 && hero.health > 0)
         {
             Stats(hero, enemy);
             hero.YourTurn(hero.Choice(), enemy);
@@ -48,5 +49,6 @@ class Battle
                 }
             }
         }
+
     }
 }
