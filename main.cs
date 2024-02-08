@@ -1,10 +1,10 @@
 using System;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("FEUUUUUUUUUUUUR !!!!!");
+       
 
         Map firstmap = new Map();
         firstmap.map();

@@ -20,7 +20,7 @@ class Battle
         Console.WriteLine();
     }
 
-    public static void Duel(Enemy enemy, Hero hero, Map firstmap)
+    public void Duel(Enemy enemy, Hero hero)
     {
         while (enemy.health > 0 && hero.health > 0)
         {

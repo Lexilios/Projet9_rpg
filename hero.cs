@@ -102,6 +102,7 @@ public class Hero : Person
         {
             NormAttack(target);
             Console.WriteLine("You stricked the enemy!");
+            Console.WriteLine(" ");
         }
 
         if (decision == 2)
